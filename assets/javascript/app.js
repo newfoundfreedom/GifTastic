@@ -1,10 +1,13 @@
 // Initial array of gifs
-let gifs = ["Star Wars", "Han Solo", "Chewbacca", "Boba Fett"];
+let gifs = ["He Man", "GI Joe", "Transformers", 'Super Friends', "She Ra", "Gummi Bears",'Care Bears', 'DuckTales',
+    'Scooby Do', 'Strawberry Shortcake', 'Power Puff Girls', 'The Flintstones', 'Spiderman', 'Justice League',
+    'Inspector Gadget', 'Mr T', 'Tom and Jerry'];
 
 // displayGifInfo function re-renders the HTML to display the appropriate content
 function displayGifInfo() {
 
-    let userSearch = $(this).attr("data-name");
+    let userSearch = $(this).attr("data-name")+' cartoon';
+    console.log(userSearch);
     let queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + userSearch + '&limit=10&api_key=dc6zaTOxFJmzC';
 
     // Creates AJAX call for the specific gif button being clicked
@@ -12,12 +15,14 @@ function displayGifInfo() {
         url: queryURL,
         method: "GET"
     }).done(function (response) {
-
+        console.log(response);
+        $('#gifs-view').empty();
         $.each(response.data, function (index) {
             let item = response.data[index],
                 still = item.images.fixed_height_still.url,
                 animated = item.images.fixed_height.url,
                 rating = item.rating;
+
 
             $('<div>')
                 .attr('id', 'gif-card')
@@ -31,7 +36,7 @@ function displayGifInfo() {
                 .appendTo('#gif-card');
 
             $('<img>')
-                .attr('src', animated)
+                .attr('src', still)
                 .data("type", {
                     still: still,
                     anim: animated
@@ -55,7 +60,7 @@ function displayGifInfo() {
             }
         })
     })
-};
+}
 
 
 // Function for displaying gif data
@@ -63,13 +68,15 @@ function renderButtons() {
 
     // Deletes the gifs prior to adding new gifs
     // (this is necessary otherwise you will have repeat buttons)
-    $("#buttons-view").empty();
+    let buttonsArea = $('#buttons-view');
+
+    buttonsArea.empty();
     // Loops through the array of gifs
-    for (var i = 0; i < gifs.length; i++) {
+    for (let i = 0; i < gifs.length; i++) {
 
         // Then dynamicaly generates buttons for each gif in the array
         // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-        var a = $("<button>");
+        let a = $("<button>");
         // Adds a class of gif to our button
         a.addClass("gif");
         // Added a data-attribute
@@ -77,7 +84,7 @@ function renderButtons() {
         // Provided the initial button text
         a.text(gifs[i]);
         // Added the button to the buttons-view div
-        $("#buttons-view").append(a);
+        buttonsArea.append(a);
     }
 }
 
@@ -85,7 +92,8 @@ function renderButtons() {
 $("#add-gif").on("click", function (event) {
     event.preventDefault();
     // This line of code will grab the input from the textbox
-    var gif = $("#gif-input").val().trim();
+    let gif = $('#gif-input').val().trim();
+
 
     // The gif from the textbox is then added to our array
     gifs.push(gif);
