@@ -1,5 +1,232 @@
+/*FONTS*/
+/*font-family: 'Press Start 2P', cursive;*/
+/*font-family: 'Monoton', cursive;*/
 
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 6px;
+}
 
-html {
-    background: url("../images/80sLivingRoom copy.jpg") no-repeat center center fixed;
+form {
+    margin-bottom: 15px;
+}
+
+.jumbotron {
+    font-family: 'Monoton', cursive;
+    background: url("../images/80sm.jpg") no-repeat center top/100% auto fixed;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-family: 'Monoton', cursive;
+    font-size: 5vw;
+    position: relative;
+    top: 1vw;
+    left: -5vw;
+}
+
+.title-year {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3vw;
+    -webkit-transform: rotate(340deg);
+    -moz-transform: rotate(340deg);
+    -o-transform: rotate(340deg);
+    position: absolute;
+
+}
+
+#show-input {
+    width: 75%;
+    height: 30px;
+
+}
+
+#add-show {
+    width: 20%;
+    height: 30px;
+    float: right;
+}
+
+#stage {
+    padding: 30px;
+}
+
+#fig {
+    display: inline-block;
+    float: left;
+    margin: 0px 10px 20px 10px;
+}
+
+/*MEDIA QUERIES*/
+
+/*!* Large desktops and laptops *!*/
+@media (min-width: 1600px) {
+    .jumbotron {
+        height: 15vw;
+        background-position-y: -125px;
+    }
+
+    .title-year {
+        left: 75vw;
+        top: 8.5vw;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+
+    button {
+        font-size: 11px;
+    }
+
+    .jumbotron {
+        height: 18vw;
+        background-position-y: -70px;
+    }
+
+    .title-year {
+        left: 75vw;
+        top: 9.3vw;
+    }
+
+}
+
+/*!* Landscape tablets and medium desktops *!*/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    button {
+        font-size: 11px;
+    }
+
+    .jumbotron {
+        height: 20vw;
+        background-position-y: -40px;
+    }
+
+    .title-year {
+        left: 75vw;
+        top: 10.5vw;
+    }
+
+}
+
+/*!* Portrait tablets and small desktops *!*/
+@media (min-width: 768px) and (max-width: 991px) {
+
+    button {
+        font-size: 11px;
+    }
+
+    .jumbotron {
+        height: 22vw;
+        background-position-y: -20px;
+    }
+
+    .title-year {
+        left: 75vw;
+        top: 12vw;
+    }
+
+    .gif-img {
+        width: 106%;
+    }
+
+    #stage {
+        padding: 15px;
+    }
+
+    #fig {
+        margin: 0px 10px 20px 10px;
+    }
+
+}
+
+/*!* Landscape phones and portrait tablets *!*/
+@media (min-width: 481px) and (max-width: 767px) {
+    button {
+        font-size: 9px;
+    }
+
+    .jumbotron {
+        height: 24vw;
+        background-position-y: -15px;
+    }
+
+    .title {
+        top: 3vw;
+    }
+
+    .title-year {
+        left: 75vw;
+        top: 13.2vw;
+    }
+
+    .gif-img {
+        width: 106%;
+    }
+
+    #show-input {
+        width: 65%;
+    }
+
+    #add-show {
+        width: 30%;
+        float: right;
+    }
+
+    #stage {
+        padding: 15px;
+    }
+
+    #fig {
+        margin: 0px 10px 20px 10px;
+    }
+
+}
+
+/*!* Portrait phones and smaller *!*/
+@media (max-width: 480px) {
+
+    button {
+        font-size: 8px;
+    }
+
+    .jumbotron {
+        height: 28vw;
+        background-position-y: -01px;
+    }
+
+    .title {
+        top: 3vw;
+    }
+
+    .title-year {
+        left: 75vw;
+        top: 15.25vw;
+    }
+
+    .gif-img {
+        width: 106%;
+    }
+
+    #show-input {
+        width: 65%;
+    }
+
+    #add-show {
+        width: 30%;
+        float: right;
+    }
+
+    #stage {
+        padding: 15px;
+    }
+
+    #fig {
+        margin: 0px 0px 20px 0px;
+    }
+
 }
