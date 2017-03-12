@@ -11,7 +11,7 @@ function displayGifs() {                                                   // Fu
         resultqty = 10,                                                    // define the quantity of results desired
         apikey = '&api_key=dc6zaTOxFJmzC';                                 // assign the giphy api key
 
-    let queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + userSearch + '&limit=' + resultqty + apikey;  // build the AJAX url string utilizing the userSearch, result quantity, & api keys
+    let queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + userSearch + '&limit=' + resultqty + apikey;  // build the AJAX url string utilizing the userSearch, result quantity, & api keys
 
     $.ajax({                                                  // AJAX call
         url: queryURL,                                        // AJAX call URL definition
